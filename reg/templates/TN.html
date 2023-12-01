@@ -1,0 +1,268 @@
+{%load static%}
+<html>
+<head>
+    <link rel="stylesheet" href={% static 'style/home.css' %}>
+    <link rel="stylesheet" href={% static 'style/state.css' %}>
+    <link rel="stylesheet" href={% static 'style/popup.css' %}> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-image: url('{% static "img/pop.jpg" %}');
+    backdrop-filter: blur(7px);
+    background-size:cover;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    width: 70%;
+    height: 70%;
+    border-radius: 15px;
+    border: black;
+}
+    header{
+    width: 100%;
+    height:70vmin;
+    background-image: url('{% static "img/state.jpg" %}');
+    background-position:bottom;
+    background-size:cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.explore{
+    width: 100%;
+    height: 80vh;
+    background-image: url('{% static "img/8.jpg" %}');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:flex
+}
+</style>
+<body>
+    <nav>
+        <h1>Wander<span style="color: white;">.in</span> India</h1>
+        <ul>
+            <li><a href="/home/">HOME</a></li>
+            <li><a href="/about/">ABOUT</a></li>
+            <li><a href="/place/">PLACES</a>
+                <ul>
+                    <li><a href="/tn/">TamilNadu</a></li>
+                    <li><a href="/ka/">Karnataka</a></li>
+                    <li><a href="/kl/">Kerala</a></li>
+                    <li><a href="/ap/">Telangana</a></li>
+                </ul>
+            </li>
+            <li><a href="/testimonials/">TESTIMONIALS</a></li>
+            <li><a href="/book/">BOOKING</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/logout/">LOG OUT</a></li>
+            {% else %}
+                <li><a href="/signin/">LOGIN</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <header>
+        <div class="header-content">
+        <h1>Tamil Nadu</h1>
+        <div class="line"></div>
+        </div>
+    </header>
+    <section class="events">
+        <div class="title">
+            <h1>Main Attraction</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src='{% static "img/auroville (1).jpg" %}'alt="" onclick="openPopup('popup1')">
+                <div id="popup1" class="popup-container">
+                    <h1 class="p_head">Auroville</h1>
+                    <p class="p_para">Located around 15 km from the city of Pondicherry, Auroville is located in Tamil Nadu and was founded in 1968 by Mirra Alfassa, a disciple of Aurobindo and fondly known as the 'Mother' of Sri Aurobindo Society. This place is the epitome of tranquillity and proves as the perfect escape for the ones in search of peace. The best way to experience Auroville ashram is to actually just sit in one of the cafes, and talk to some of the residents here about their experience of living in the city.</p>
+                    <br><br><br>
+                    <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                    <div class="mail"> 
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                    </div>
+                    <button class="button"  id="pp_button" onclick="closePopup('popup1')">Close</button>
+                </div>
+                <h4 >Auroville</h4>
+                <p> In Pursuit of Human Unity and Cosmic Harmony.</p>
+                <button class="button" type="button"  onclick="openPopup('popup1')">Learn More</button>
+            </div>
+            <div class="col">
+                <img src='{% static "img/Brihadeeswarar temple (1).jpg" %}'alt="" onclick="openPopup('popup2')">
+                <div id="popup2" class="popup-container">
+                    <h1 class="p_head">Brihadeeswarar Temple</h1>
+                    <p class="p_para">Brihadeeshwara Temple (Peruvudaiyar Kovil) is a Hindu temple dedicated to Shiva located in Thanjavur in the Indian state of Tamil Nadu. It is also known as Periya Kovil, RajaRajeswara Temple and Rajarajesvaram. It is one of the largest temples in India and is an example of Dravidian architecture during the Chola period. Built by emperor Raja Raja Chola I and completed in 1010 AD, the temple turned 1000 years old in 2010. The temple is part of the UNESCO World Heritage Site known as the “Great Living Chola Temples”, with the other two being the Brihadeeswarar Temple, Gangaikonda Cholapuram and Airavatesvara temple.</p>
+                    <br><br><br>
+                    <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                    <div class="mail"> 
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                    </div>
+                    <button class="button"  id="pp_button" onclick="closePopup('popup2')">Close</button>
+                </div>
+                <h4>Brihadeeswarar Temple</h4>
+                <p> Where Time Stands Still, and Spirituality Soars High.</p>
+                <button class="button" type="button" onclick="openPopup('popup2')">Learn More</button>
+            </div>
+        </div>
+    </section>
+    <section class="explore">
+        <div class="explore-content">
+            <h1>WANDER IN INDIA</h1>
+            <div class="line"></div>
+            <h1 style="font-size: 30px; color: skyblue" >"Empower global travelers with a seamless and immersive experience, showcasing the rich tapestry of India's diverse landscapes, cultures, and adventures. Wander In India aims to inspire exploration, foster cultural exchange, and create unforgettable memories for every traveler."</h1>
+            <form action="/place/">
+                <button class="button" type="submit" >Learn More</button> 
+                </form>
+        </div>
+    </section>
+    <section class="tours">
+        <div class="row">
+            <div class="content-col">
+                <h1>OTHER SPOTS & DESTINATION</h1>
+                <div class="line"></div>
+                <p>Unveiling Hidden Gems, One Journey at a Time. </p>
+                    <form action="/place/">
+                        <button class="button" type="submit" >Learn More</button> 
+                        </form>
+            </div>
+                <div class="image-col">
+                    <div class="image-gal">
+                        <div class="image-area">
+                            <div id="popup3" class="popup-container">
+                                <h1 class="p_head">Dhanushkodi</h1>
+                    <p class="p_para">One of the most exotic adornments in the vast coastline of Tamil Nadu is the picturesque Dhanushkodi Beach. A highly popular tourism hotspot, Dhanushkodi Beach is visited by lakhs of tourists every year from all over the world. This pristine beach is surrounded by the Gulf of Mannar on one side and the Bay of Bengal on the other. Resting on the southern tip of Tamil Nadu, this amazing beach destination is a place rich in history, myths and beauty.</p>
+                    <br><br><br>
+                    <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                    <div class="mail"> 
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                    </div>
+                                <button class="button"  id="pp_button" onclick="closePopup('popup3')">Close</button>
+                            </div>
+                            <img src='{% static "img/dhanushkodi (1).jpg" %}' alt="">
+                            <div class="image-text" onclick="openPopup('popup3')"> 
+                                <h3>Dhanushkodi</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-gal">
+                        <div class="image-area">
+                            <div id="popup4" class="popup-container">
+                                <h1 class="p_head">Mahabalipuram</h1>
+                                <p class="p_para">Ancient temples that reflect the glory of erstwhile kingdoms, pristine beaches that emanate matchless natural beauty, rich cultural heritage that welcomes you with warmth – Mahabalipuram is in many ways the splendidly vibrant destination you will love to visit many times.There are certain destinations that will leave a lasting impression on you, even years after your visit; and they keep calling you back, no matter how far away you are.</p>
+                                <br><br><br>
+                                <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                                <div class="mail"> 
+                                    <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                                    <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                                    <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                                </div>
+                                <button class="button"  id="pp_button" onclick="closePopup('popup4')">Close</button>
+                            </div>
+                            <img src='{% static "img/mahabalipuram (1).jpg" %}' alt="">
+                            <div class="image-text" onclick="openPopup('popup4')"> 
+                                <h3>Mahabalipuram</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-gal">
+                        <div class="image-area">
+                            <div id="popup5" class="popup-container">
+                                <h1 class="p_head">Meenakshi Amman temple</h1>
+                    <p class="p_para">Madurai is synonymous with Sri Meenakshi Amman temple. A famous pilgrimage spot, the temple is renowned for its classic architectural style, stupendous structures and carvings.The temple abounds in legends and myths. It is believed that Indra discovered the presence of Swayambhu lingam during his trip through Madurai and he enshrined it. This temple finds mention in ancient texts and was completely devastated in 1310. The temple was restored to its original glory in the 14th century. It is quite an architectural marvel with 14 temple towers with a height ranging between 45-50 metres. A 1000 pillared hall is another major feature with exquisitely sculpted pillars. There are musical pillars which produce sounds of different scales.</p>
+                    <h2>Best Time: Nov-Mar</h2><br><br><br>
+                    <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                    <div class="mail"> 
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                    </div>
+                                <button class="button"  id="pp_button" onclick="closePopup('popup5')">Close</button>
+                            </div>
+                            <img src='{% static "img/meenakshi amman temple (1).jpg" %}' alt="">
+                            <div class="image-text" onclick="openPopup('popup5')"> 
+                                <h3>Meenakshi Amman Temple</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-gal">
+                        <div class="image-area">
+                            <div id="popup6" class="popup-container">
+                                <h1 class="p_head">Pine Forest</h1>
+                                <p class="p_para">A journey of just 15 minutes from Ooty town centre will take you to the famed Pine Tree Forests of Ooty. These scenic woodlands, obscured in a fleeting veil of mist, offer a delightful experience to all travellers.Immortalized in countless Indian movies are the soaring pine woods, awe-inspiring landscapes and pleasant atmosphere of the Pine Tree Forests of Ooty. These woodlands overlooking the majestic view of Sandynulla Lake, are an ideal honeymoon destination. The air scented with pine cones, the rich silence of Nature and the spectacle of dancing butterflies are just a few of the magical elements in these enchanted woods. </p>
+                                <br><br><br>
+                                <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                                <div class="mail"> 
+                                    <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                                    <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                                    <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                                </div>
+                                <button class="button"  id="pp_button" onclick="closePopup('popup6')">Close</button>
+                            </div>
+                            <img src='{% static "img/pine forest (1).jpg" %}' alt="">
+                            <div class="image-text" onclick="openPopup('popup6')"> 
+                                <h3>Pine Forest</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            <footer>
+                <div class="footerContainer">
+                    <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="/home/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/place/">Places</a></li>
+                    <li><a href="/testimonials/">Testimonials</a></li>
+                    <li><a href="/login/">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <!-- <p>Embark on a remarkable journey through the cultural, natural, and historical treasures of Tamil Nadu, Kerala,<br> 
+                Andhra Pradesh, and Karnataka. Each state welcomes you with open arms, inviting you to discover the stories,<br>
+                flavors, and landscapes that make South India an unforgettable destination.</p>  -->
+            <p>Copyright &copy;2023; Designed by <span class="designer"> Wander.in India</span></p>
+        </div>
+    </footer>
+    <script>
+        // Function to open the popup
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+    
+        // Function to close the popup
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

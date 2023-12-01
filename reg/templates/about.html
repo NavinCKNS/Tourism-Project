@@ -1,0 +1,110 @@
+{%load static%}
+<html>
+    <head>
+        <link rel="stylesheet" href={% static 'style/home.css' %}>
+        <!-- <link rel="stylesheet" href="aboutstyle.css"> -->
+        <link rel="stylesheet" href={% static 'style/place.css' %}>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <!-- navigation starts -->
+        <nav>
+            <h1>Wander<span style="color: white;">.in</span> India</h1>
+            <ul>
+                <li><a href="/home/">HOME</a></li>
+                <li><a href="/about/">ABOUT</a></li>
+                <li><a href="/place/">PLACES</a>
+                    <ul>
+                        <li><a href="/tn/">TamilNadu</a></li>
+                        <li><a href="/ka/">Karnataka</a></li>
+                        <li><a href="/kl/">Kerala</a></li>
+                        <li><a href="/ap/">Telangana</a></li>
+                    </ul>
+                </li>
+                <li><a href="/testimonials/">TESTIMONIALS</a></li>
+                <li><a href="/book/">BOOKING</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/logout/">LOG OUT</a></li>
+                {% else %}
+                    <li><a href="/signin/">LOGIN</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <!-- navigation ends -->
+
+        <!-- page content starts -->
+        <img src='{% static "img/abt.jpg" %}' alt="image" style="width: 100%;height: 90%;">
+
+        <div class="main">
+            <div class="ab-txt">
+                <h5>About <span>Company</span></h5>
+                <p>Founded in the year 2005 as Wander.in India, an online travel platform, 
+                    the company boosted as a private limited in the year 2013 and has emerged 
+                    as the “Best Upcoming Inbound Tour Operators in India”. It has been awarded 
+                    in the category of “Excellence in the Tourism Industry” by World Tourism Brand 
+                    Academy.</p>
+            </div>
+        </div> 
+
+        <div class="main">
+            <div class="ab-txt">
+                <h5>Why <span>Us?</span></h5>
+                <p>Wander.in India is an award winning travel organization and excels with quality services from its experienced staffs. 
+                Over the years the company has received positive feedbacks from its existing clients and hence one can expect a cordial reception.</p>
+            </div>
+        </div> 
+
+        <div class="main">
+            <div class="ab-txt">
+                <h5>Our <span>Clients</span></h5>
+                <p>We are here to render the best services to our clients who are part of our goal. Our clients, 
+                    over the years, multiplied from small enterprises to Fortune 500 companies that include both the private 
+                    and public sector undertakings and thus leading us to spread all over the nation.</p>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="ab-txt">
+                <h5>About the <span>Services</span></h5>
+                <p>Strong Associations with budget and luxury hotels across the country enables us to give our clients their best value for money. 
+                    This trait of Wander.in India makes it the most attractive tour and travel agency for you. 
+                    The team is prompt in their replies to your queries, which has earned a reputation as one of the best and most efficient tour and travel operators in India by the clients andoverseas partners.</p>
+            </div>
+        </div>    
+        <!-- page contents ends -->
+
+
+        <!-- footer starts -->
+        <footer>
+            <div class="footerContainer">
+                <div class="socialIcons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="footerNav">
+                    <ul>
+                        <li><a href="/home/">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/place/">Places</a></li>
+                        <li><a href="/testimonials/">Testimonials</a></li>
+                        <li><a href="/login/">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <!-- <p>Embark on a remarkable journey through the cultural, natural, and historical treasures of Tamil Nadu, Kerala,<br> 
+                    Andhra Pradesh, and Karnataka. Each state welcomes you with open arms, inviting you to discover the stories,<br>
+                    flavors, and landscapes that make South India an unforgettable destination.</p>  -->
+                <p>Copyright &copy;2023; Designed by <span class="designer"> Wander.in India</span></p>
+            </div>
+        </footer>
+        <!-- footer ends -->
+        
+    </body>
+</html>

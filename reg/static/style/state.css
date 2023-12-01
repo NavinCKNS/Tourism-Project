@@ -1,0 +1,244 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+body,html{
+    overflow-x: hidden;
+}
+
+.header-content{
+    color: whitesmoke;
+    margin-left: -40%;
+    margin-bottom: -20%;
+}
+.header-content h1{
+    font-size:150px;
+}
+.line{
+    width:150px;
+    height:4px;
+    background:#fc036b;
+    margin:10px auto;
+    border-radius: 5px;
+}
+section{
+    width:80%;
+    margin:80px auto;
+}
+.title{
+    text-align:center;
+    font-size:30px;
+    color:blue;
+}
+.row{
+    display: flex;
+    align-items: center;
+    width:100%;
+    justify-content: space-between;
+}
+.row .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.events .row .col img {
+    width: 80%;
+}
+.button{ 
+    margin-top: 30px;
+    background: linear-gradient(to  right, darkorange ,skyblue);
+    color: white;
+    border-radius: 30px;
+    text-decoration:none;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 13px 30px;
+    transition: .5s;  
+    background-color: #000;
+    color: black;
+}
+.button:hover{
+    background:transparent;
+    border: 2px solid blue;
+    cursor: pointer; 
+}
+.events .row{
+    margin-top:50px;
+}
+h4{
+   font-size:3vmin;
+   color:#484872;
+   margin:20px auto; 
+}
+p{
+    color:#484872;
+    padding:0px 40px;
+}
+
+.explore-content{
+    width: 60%;
+    padding:50px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.explore-content h1{
+    font-size: 7vmin;
+}
+.explore-content .line{
+    margin-bottom:50px;
+}
+.explore-content p{
+    color: rgb(103, 175, 239);
+
+}
+.explore-content button{
+    margin-top: 40px;
+}
+.content-col{
+    width:40%;
+}
+.image-area{
+    width:60%;
+}
+.tours .image-area{
+     display:flex;
+     flex-wrap:wrap;
+     width: 100%;
+     align-items: center;
+}
+.image-area img{
+    max-width:390px;
+    margin:10px;
+}
+.content-col h1{
+    font-size: 7vmin;
+    color:#484872;
+}
+.content-col line{
+   padding: -1px;
+}
+.content-col p{
+    padding:0;
+    margin:30px auto;
+ }
+.content-col .button{
+    margin-left: 150px;
+ }
+ img{
+    transition:transform .3s ease;
+ }
+ img:hover{
+    transform:scale(1.1);
+ }
+ footer{
+    background-color: #111;
+}
+.footerContainer{
+    width:100%;
+    padding:70px 30px 20px
+}
+.socialIcons{
+    display:flex;
+    justify-content:center;
+}
+.socialIcons a{
+    text-decoration:none;
+    padding:10px;
+    background-color:white;
+    margin:10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 1cm;
+    color:black;
+    opacity:0.9;
+}
+.socialIcons a:hover{
+    cursor: pointer;
+    background-color: #FCB975;
+    transition: 0.2s;
+}
+.footerNav{
+    margin:30px 0;
+}
+.footerNav ul{
+    display:flex;
+    justify-content:center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:#FCB975;
+    margin:20px;
+    text-decoration:none;
+    font-size:0.5cm;
+    opacity: 0.7;
+    transition:0.2s;
+}
+.footer ul li a:hover{
+    opacity:1;
+    color:white;
+}
+.footerBottom{
+    background-color:#000;
+    padding:20px;
+    text-align:center;
+}
+.footerBottom p{
+    color:white;
+}
+.designer{
+    opacity:0.7;
+    letter-spacing:1px;
+    font-weight:400;
+    margin:0px 5;
+}
+.image-text,.image-area:after{
+   width: 100%;
+   position: absolute;
+   left: 0;
+}
+.image-area:after{
+    content: '';
+    height: 100%;
+    top:0;
+    transition: .5s;
+}
+.image-area:hover:after{
+    background: linear-gradient(to  bottom,transparent,black);
+}
+.image-text{
+    padding: 20px;
+    margin-bottom: 20px;
+    bottom: 0;
+    z-index:1;
+    transform: translateY(20px);
+    text-align: center;
+    transition:all .5s cubic-bezier(.13,.62,.81,.91) 0s;
+}
+.image-area:hover .image-text{
+    transform: translateY(0);
+}
+
+.image-col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.image-area {
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+h3 {
+    margin: 0;
+}
+

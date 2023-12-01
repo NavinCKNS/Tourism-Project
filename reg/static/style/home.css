@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+nav{
+    width: 100%;
+    /* background: linear-gradient(to  right ,darkblue,rgb(165, 118, 42)); */
+    background-color: #000;
+    color: #fff;
+    opacity: .8;
+    height: 60px;
+    line-height: 60px;
+    padding: 0px 40px;
+}
+nav h1{
+    font-size: 40px;
+    /* font-family: Tangerine; */
+    color: skyblue;
+    float: left;
+    
+}
+.catch h2{
+    margin-top: -50px;
+    margin-left:5%; 
+    font-size: 170px;
+    color: #77b5f7;
+}
+.catch{
+    position: absolute;
+    margin-top: 5%;
+    margin-left:5%;  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 100px;
+    
+}
+.container{
+
+    position: absolute;
+    margin-top: 33%;
+    margin-left:6%;  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+}
+nav ul li{
+    float: left;
+    list-style: none;
+    position: relative;
+}
+nav ul li a{
+    text-decoration: none;
+    /* font-family: sans-serif; */
+    color: white;
+    font-size: 20px;
+    padding: 0px 16px;
+    display: block;
+}
+nav ul li a:hover{
+    /* background: linear-gradient(to  left,transparent,darkblue);
+    background: transparent;
+    border-radius: 30px;
+    border: 2px black; */
+    color:tomato;
+    transition: .9s;
+}
+nav ul li a:after{
+    content: '';
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%) scaleX(0);
+    -webkit-transform:translateX(-50%) scaleX(0);
+    -webkit-transform-orgin:50% 50%;
+    width:100%;
+    height:2px;
+    background-color:rgba(255,255,255,0.9);
+    -webkit-transition:transform 250ms;
+    transition:transform 250ms;
+}
+nav ul li a:hover:after{
+    -webkit-transform:translateX(-50%) scaleX(1);
+    transform:translateX(-50%) scaleX(1);
+
+}
+nav ul li ul{
+    position: absolute;
+    display: none;
+    background-color: black;
+    /* border-radius: 0px 0px 10px 10px; */
+}
+nav ul li:hover ul{
+    display: block;
+}
+nav ul li ul li{
+    line-height: 1;
+    width: 190px;
+    border-radius: 30%;
+    padding: 6px;
+}
+nav ul li ul li a{
+    padding: 10px 16px;
+}
+nav ul li ul li a:hover{
+    background: linear-gradient(to  left,transparent,rgb(165, 118, 42));
+    border-radius: 30px;
+}
+body {
+    color:white;
+}
+body nav h1 span{
+    color: white;
+}
+.header{
+    margin:auto;
+    margin-top: -739px;
+}
+

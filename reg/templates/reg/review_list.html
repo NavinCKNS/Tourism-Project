@@ -1,0 +1,95 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'style/testimonials.css' %}>
+    <link rel="stylesheet" href={% static 'style/home.css' %}>
+    <style>
+        body{
+    min-height:100vh;
+    background: url('{% static "img/testimonials.jpg" %}') center/cover;
+    backdrop-filter: blur(7px);
+    justify-content: center;
+}
+.button{ 
+    margin-top: 30px;
+    background: linear-gradient(to  right, skyblue ,skyblue);
+    color: white;
+    border-radius: 30px;
+    text-decoration:none;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 13px 30px;
+    transition: .5s;  
+    background-color: #000;
+    color: black;
+    margin-left: 45%;
+    margin-top: -60%;
+}
+.button:hover{
+    background:transparent;
+    border: 2px solid blue;
+    cursor: pointer; 
+}
+    </style>
+<body>
+    <nav>
+        <h1>Wander<span style="color: white;">.in</span> India</h1>
+        <ul>
+            <li><a href="/home/">HOME</a></li>
+            <li><a href="/about/">ABOUT</a></li>
+            <li><a href="/place/">PLACES</a>
+                <ul>
+                    <li><a href="/tn/">TamilNadu</a></li>
+                    <li><a href="/ka/">Karnataka</a></li>
+                    <li><a href="/kl/">Kerala</a></li>
+                    <li><a href="/ap/">Telangana</a></li>
+                </ul>
+            </li>
+            <li><a href="/testimonials/">TESTIMONIALS</a></li>
+            <li><a href="/book/">BOOKING</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/logout/">LOG OUT</a></li>
+            {% else %}
+                <li><a href="/signin/">LOGIN</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <main class="table">
+        <section class="table_header">
+            <h1 style="font-size: 40px; text-align: center;">Testimonials</h1>
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>UserName</th>
+                        <th>Place</th>
+                        <th>Feedback</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in review_list %}
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.username}}</td>
+                        <td>{{i.place}}</td>
+                        <td>{{i.feedback}}</td>
+                        <td><strong>{{i.rating}}</strong></td>
+                    </tr>
+                    {% endfor %}
+                  
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <form action="/add/">
+        <button class="button" type="submit">Add Review</button>
+    </form>
+</body>
+</html>

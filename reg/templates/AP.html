@@ -1,0 +1,271 @@
+{%load static%}
+<html>
+<head>
+    <link rel="stylesheet" href={% static 'style/home.css' %}>
+    <link rel="stylesheet" href={% static 'style/state.css' %}>
+    <link rel="stylesheet" href={% static 'style/popup.css' %}>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-image: url('{% static "img/pop.jpg" %}');
+    backdrop-filter: blur(7px);
+    background-size:cover;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    width: 70%;
+    height: 70%;
+    border-radius: 15px;
+    border: black;
+}
+    header{
+    width: 100%;
+    height:70vmin;
+    background-image: url('{% static "img/state.jpg" %}');
+    background-position:bottom;
+    background-size:cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.explore{
+    width: 100%;
+    height: 80vh;
+    background-image: url('{% static "img/8.jpg" %}');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:flex
+}
+</style>
+</head>
+<body>
+    <nav>
+        <h1>Wander<span style="color: white;">.in</span> India</h1>
+        <ul>
+            <li><a href="/home/">HOME</a></li>
+            <li><a href="/about/">ABOUT</a></li>
+            <li><a href="/place/">PLACES</a>
+                <ul>
+                    <li><a href="/tn/">TamilNadu</a></li>
+                    <li><a href="/ka/">Karnataka</a></li>
+                    <li><a href="/kl/">Kerala</a></li>
+                    <li><a href="/ap/">Telangana</a></li>
+                </ul>
+            </li>
+            <li><a href="/testimonials/">TESTIMONIALS</a></li>
+            <li><a href="/book/">BOOKING</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/logout/">LOG OUT</a></li>
+            {% else %}
+                <li><a href="/signin/">LOGIN</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <header>
+        <div style="margin-left:-20%;" class="header-content">
+        <h1>AndhraPradesh</h1>
+        <div class="line"></div>
+        </div>
+    </header>
+    <section class="events">
+        <div class="title">
+            <h1>Main Attraction</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src='{% static "img/araku-valley.jpg" %}' alt="araku_valley" onclick="openPopup('popup1')" >
+                <div id="popup1" class="popup-container">
+                    <h1 class="p_head">Araku Valley</h1>
+                    <p class="p_para">Araku is a must visit destination for tourists visiting Vizag. Araku valley is mainly inhabited by tribals and the Tribal museum is one of the main attractions here. It houses tribal handicrafts and several artifacts depicting the lifestyle of tribal people. The tribal dance known as Dhimsa dance with tribals dressed in colorful attire is a must see for visitors coming to Araku.</p>
+                    <br><br><br>
+                    <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                    <div class="mail"> 
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                    </div>
+                    <button class="button"  id="pp_button" onclick="closePopup('popup1')">Close</button>
+                </div>
+                
+                <h4 >Araku Valley</h4>
+                <p>Nature's Canvas, Where Every View is a Masterpiece.</p>
+                <button class="button" type="button" onclick="openPopup('popup1')">Learn More</button>
+            </div>
+            <div class="col">
+                <img src='{% static "img/belum caves.jpg" %}' alt="" onclick="openPopup('popup2')">
+                <div id="popup2" class="popup-container">
+                    <h1 class="p_head">Belum Caves</h1>
+                    <p class="p_para">The caves in Belum are the longest in India after the ones in the state of Meghalaya, known for their cave formations, such as stalactite and stalagmite formations. The Belum Caves have long passages, galleries, spacious caverns with fresh water, and siphons.This cave system was formed over the course of tens of thousands of years by the constant flow of underground water from the now-disappeared river Chitravathi.</p>
+                    <br><br><br>
+                    <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                    <div class="mail"> 
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                    </div>
+                    <button class="button" id="pp_button" onclick="closePopup('popup2')">Close</button>
+                </div>
+                <h4>Belum Caves</h4>
+                <p>Journey into the Heart of Earth's Mysteries, Where Time Unveils Its Secrets.</p>
+                <button class="button" type="button" onclick="openPopup('popup2')">Learn More</button>
+            </div>
+        </div>
+    </section>
+    <section class="explore">
+        <div class="explore-content">
+            <h1>WANDER IN INDIA</h1>
+            <div class="line"></div>
+            <h1 style="font-size: 30px; color: skyblue">"Empower global travelers with a seamless and immersive experience, showcasing the rich tapestry of India's diverse landscapes, cultures, and adventures. Wander In India aims to inspire exploration, foster cultural exchange, and create unforgettable memories for every traveler."</h1>
+            <form action="/place/">
+            <button class="button" type="submit" >Learn More</button> 
+            </form>
+        </div>
+    </section>
+    <section class="tours">
+        <div class="row">
+            <div class="content-col">
+                <h1>OTHER SPOTS & DESTINATION</h1>
+                <div class="line"></div>
+                <p>Unveiling Hidden Gems, One Journey at a Time. </p>
+                    <form action="/place/">
+                        <button class="button" type="submit" >Learn More</button> 
+                        </form>
+            </div>
+                <div class="image-col">
+                    <div class="image-gal">
+                        <div class="image-area">
+                            <img src='{% static "img/PAPI-KONDALU.jpg" %}' alt="" >
+                            <div id="popup3" class="popup-container">
+                                <<h1 class="p_head">Papi Kondalu</h1>
+                                <p class="p_para">Papikondalu mountain range runs along the River Godavari (Western Godavari) and is located in Rajahmundry, Andhra Pradesh. Papikondalu is a sheer fest to the eyes in terms of its scenic beauty. As the hills become closer and closer to the visitor, the width of the mighty Godavari becomes narrower. In accordance with this view resembling the middle partition of a woman's hair, it was initially named as 'Papidi' Kondalu- Paidi in Telugu means the middle partition of a woman’s hair. Later, it came to be known as Papikondalu in the local language. The river narrowing, its twists and turns along with the Papi Hills form a breathtaking visual experience.</p>
+                               <br><br><br>
+                                <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                                <div class="mail"> 
+                                    <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                                    <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                                    <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                                </div>
+                                <button class="button"  id="pp_button" onclick="closePopup('popup3')">Close</button>
+                            </div>
+                            <div class="image-text" onclick="openPopup('popup3')"> 
+                                <h3>Papi Kondalu</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-gal">
+                        <div class="image-area">
+                            <img src='{% static "img/Gandikota_Canyon.jpg" %}' alt="" >
+                            <div id="popup4" class="popup-container">
+                                <h1 class="p_head">Gandikota Canyon</h1>
+                    <p class="p_para">Gandikota is a small village in the Kadapa district of Andhra Pradesh that is known for its spectacular gorge formed by the river Pennar that cuts through the Erramala hills. This handsome piece of nature’s architecture has come to be known as the Hidden Grand Canyon of India by travelers who visit it and get bewitched by its beauty.</p>
+                    <br><br><br>
+                    <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                    <div class="mail"> 
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                    </div>
+                                <button class="button" id="pp_button" onclick="closePopup('popup4')">Close</button>
+                            </div>
+                            <div class="image-text" onclick="openPopup('popup4')"> 
+                                <h3>Gandikota Canyon</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-gal">
+                        <div class="image-area">
+                            <img src='{% static "img/horsley hilss.jpg" %}' alt="" >
+                            <div id="popup5" class="popup-container">
+                                <h1 class="p_head">Horsley Hills</h1>
+                    <p class="p_para">Situated close to the southwestern fringe between Andhra Pradesh and Karnataka, Horsley Hills alludes to a slope station that is the ideal amalgam of the charms of Andhra Pradesh and the excellence of the slopes. It is in this manner regularly called, the Ooty of Andhra. This common wonder is arranged at a bewildering stature of 4312 meters and is outstanding for its stunning scenes.</p>
+                    <br><br><br>
+                    <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                    <div class="mail"> 
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                    </div>
+                                <button class="button"  id="pp_button" onclick="closePopup('popup5')">Close</button>
+                            </div>
+                            <div class="image-text" onclick="openPopup('popup5')"> 
+                                <h3>Horsley Hills</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-gal">
+                        <div class="image-area">
+                            <img src='{% static "img/tirupati.jpg" %}' alt="">
+                            <div id="popup6" class="popup-container">
+                                <h1 class="p_head">Tirupati</h1>
+                    <p class="p_para">The holy city of Tirupati draws tourists and religious pilgrims alike, who flock to the Ancient Lord Venkateswara Temple, known for its elabourate Dravidian style and gold-plated cupola. Prayers are offered daily at this popular temple, which sits high in the Tirumala hills. Several other temples dot the town, and the lush countryside contains numerous waterfalls. Tirupati is also home to a rare, naturally-occurring pre-Jurassic stone arch that is 25 feet long and 10 feet high, one of only three of these geological features in the world.</p>
+                    <br><br><br>
+                    <h1 style="color: black;">Refer These Links For Tourist Guides:</h1>
+                    <div class="mail"> 
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                        <li><a href="www.gmail.com">guestaccommodation@auroville.org.in</a></li>
+                    </div>
+                                <button class="button"  id="pp_button" onclick="closePopup('popup6')">Close</button>
+                            </div>
+                            <div class="image-text" onclick="openPopup('popup6')"> 
+                                <h3>Tirupati</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            <footer>
+                <div class="footerContainer">
+                    <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="/home/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/place/">Places</a></li>
+                    <li><a href="/testimonials/">Testimonials</a></li>
+                    <li><a href="/login/">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <!-- <p>Embark on a remarkable journey through the cultural, natural, and historical treasures of Tamil Nadu, Kerala,<br> 
+                Andhra Pradesh, and Karnataka. Each state welcomes you with open arms, inviting you to discover the stories,<br>
+                flavors, and landscapes that make South India an unforgettable destination.</p>  -->
+            <p>Copyright &copy;2023; Designed by <span class="designer"> Wander.in India</span></p>
+        </div>
+    </footer>
+    <script>
+
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+    
+        
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+    
+    
+
+</body>
+</html>

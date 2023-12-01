@@ -1,0 +1,114 @@
+{%load static%}
+<html>
+    <head>
+        <title>About Us</title>
+        <link rel="stylesheet" href={% static 'style/place.css' %}>
+        <link rel="stylesheet" href={% static 'style/home.css' %}>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <nav>
+            <h1>Wander<span style="color: white;">.in</span> India</h1>
+            <ul>
+                <li><a href="/home/">HOME</a></li>
+                <li><a href="/about/">ABOUT</a></li>
+                <li><a href="/place/">PLACES</a>
+                    <ul>
+                        <li><a href="/tn/">TamilNadu</a></li>
+                        <li><a href="/ka/">Karnataka</a></li>
+                        <li><a href="/kl/">Kerala</a></li>
+                        <li><a href="/ap/">Telangana</a></li>
+                    </ul>
+                </li>
+                <li><a href="/testimonials/">TESTIMONIALS</a></li>
+                <li><a href="/book/">BOOKING</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/logout/">LOG OUT</a></li>
+                {% else %}
+                    <li><a href="/signin/">LOGIN</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    <section class="about">
+        <h1>Places</h1>
+        <div class="main">
+            <img src='{% static "img/tn.jpg" %}'>
+            <div class="ab-txt">
+                <h5>Tamil <span>Nadu</span></h5>
+                <p>Discover the timeless allure of Tamil Nadu, where ancient temples whisper tales of history,
+                and vibrant traditions come alive through dance and cuisine. From the bustling energy of Chennai 
+                to the serenity of Kanyakumari, every corner unveils a unique narrative waiting to be explored.</p>
+                <form action="/tn/">
+                <button class="button" type="submit">Let's Wander</button>
+            </form>
+            </div>
+        </div> 
+        <div class="main">
+            <img src='{% static "img/kr.jpg" %}'>
+            <div class="ab-txt">
+                <h5>Ker<span>ala</span></h5>
+                <p>Welcome to Kerala, a symphony of lush landscapes and tranquil backwaters.Experience the
+                   magic of misty hill stations, Ayurvedic wellness, and vibrant art forms. Indulge in the
+                   warmth of Kerala's hospitality and savor the flavors
+                     of its diverse cuisine.</p>
+                     <form action="/kl/">
+                        <button class="button" type="submit">Let's Wander</button>
+                    </form>
+            </div>
+        </div> 
+        <div class="main">
+            <img src='{% static "img/an.jpg" %}'>
+            <div class="ab-txt">
+                <h5>Andhra <span>Pradesh</span></h5>
+                <p>Explore Andhra Pradesh, where ancient heritage meets modern dynamism.Immerse yourself
+                   in the spirituality of historic temples and the vivacity of bustling cities. Taste the
+                   fiery delights of Andhra cuisine and soak in the breathtaking beauty of its landscapes.</p>
+                   <form action="/ap/">
+                    <button class="button" type="submit">Let's Wander</button>
+                </form>
+            </div>
+        </div> 
+        <div class="main">
+            <img src='{% static "img/kar.jpg" %}'>
+            <div class="ab-txt">
+                <h5>Karn<span>ataka</span></h5>
+                <p>Embark on a journey through Karnataka's diverse tapestry, from the tech hub of Bangalore
+                   to the historical riches of Hampi. Experience royal heritage in Mysore, tranquility in 
+                   Coorg's hills, and the allure of coastal getaways.Karnataka welcomes you with a blend of
+                    adventure, culture, and natural beauty.</p>
+                    <form action="/ka/">
+                        <button class="button" type="submit">Let's Wander</button>
+                    </form>
+            </div>
+        </div>
+    </section> 
+    <footer>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="/home/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/place/">Places</a></li>
+                    <li><a href="/testimonials/">Testimonials</a></li>
+                    <li><a href="/login/">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <!-- <p>Embark on a remarkable journey through the cultural, natural, and historical treasures of Tamil Nadu, Kerala,<br> 
+                Andhra Pradesh, and Karnataka. Each state welcomes you with open arms, inviting you to discover the stories,<br>
+                flavors, and landscapes that make South India an unforgettable destination.</p>  -->
+            <p>Copyright &copy;2023; Designed by <span class="designer"> Wander.in India</span></p>
+        </div>
+    </footer>
+    </body>
+</html>
